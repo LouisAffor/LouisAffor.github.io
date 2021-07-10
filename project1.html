@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Louis Affor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Quiz Data Summary</h1>
+						<p></p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								
+								<p>You can view the full summary at: <a href="https://docs.google.com/document/d/1eAzCJdAMVPBmj_awfow7hsM_qR_7wmRLt8uEbq8D73c/edit?usp=sharing" target="_blank" rel="noopener noreferrer">docs.google.com/d/QuizSummary</a></p>
+								<h2><strong>Process</strong></h2>
+								<p>The analysis was conducted using the pandas python library through jupyter notebook.</p>
+
+								<p><strong>Step 1 -</strong> import modules and create data frames from google spreadsheets </p>
+								<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+									
+sheet_id = 'The sheet I.D.'
+sheet_name1 = 'Data'
+sheet_name2 = 'Indiv_stats'
+sheet_name3 = 'Player_Contribution'
+									
+data_url = "https://docs.google.com/spreadsheets/d/{}/gviz/tq?tqx=out:csv&sheet={}".format(sheet_id, sheet_name1)									
+indiv_url = "https://docs.google.com/spreadsheets/d/{}/gviz/tq?tqx=out:csv&sheet={}".format(sheet_id, sheet_name2)									
+MVP_url = "https://docs.google.com/spreadsheets/d/{}/gviz/tq?tqx=out:csv&sheet={}".format(sheet_id, sheet_name3)
+									
+df1 = pd.read_csv(data_url)
+df2 = pd.read_csv(indiv_url)
+df3 = pd.read_csv(MVP_url)
+</code></pre>
+
+								<p><strong>Step 2 -</strong> Summary of important data columns: </p>
+								<pre><code>df1[['No. in Team','No. of Teams', 'Position', 'Total Points']].describe()
+</code></pre>
+
+								<div class="box alt">
+									<div class="row gtr-uniform">
+										<div class="col-4"><span class="image fit"><img src="images/picQS.JPG" alt="" /></span></div>
+										<div class="col-4"><span class="image fit"><img src="images/picNOT.png" alt="" /></span></div>
+										<div class="col-4"><span class="image fit"><img src="images/PicNIT.png" alt="" /></span></div>
+									</div>
+								</div>
+
+								<p><strong>Step 3 -</strong> Use matplotlib to graph data </p>
+								<pre><code>plt.figure(figsize=(10,6))
+plt.title('Contribution over time' , fontdict={'fontweight':'bold', 'fontsize': 16})
+
+for name in df3:
+	if name in names:
+    	plt.plot(df3.Date, df3[name])
+
+		plt.xlabel('Date')
+		plt.ylabel('Cumulative Points')
+		plt.xticks(df3.Date[::8])
+		plt.legend(bbox_to_anchor = [1,1])
+</code></pre>
+
+								<div class="box alt">
+									<div class="row gtr-uniform">
+										<div class="col-12"><span class="image fit"><img src="images/picPC.png" alt="" /></span></div>
+									</div>
+								</div>
+
+								<p><strong>Step 4 -</strong> Summaries data with use of graphics</p>
+								
+								<p>By looking at the shared points gathered by individuals 
+									when they participate in the quiz, we are able to gauge their 
+									cumulative contribution over time.
+									To account for variation in total points awarded each week and 
+									the unknown contribution each member may give to the group for 
+									each given week, the contribution awarded after each quiz is 
+									calculated from the percentile in relation to either the top 
+									performing team of that given week. This percentile is then 
+									shared evenly between the current participants assuming equal 
+									contribution.</p>
+									
+
+								<ul class="actions">
+									<li><input type="button" value="Back" onclick="history.back()"></li>
+								</ul>
+								
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						
+						<section>
+							<ul class="icons">
+								<li><a href="https://uk.linkedin.com/in/louis-affor" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/LouisAffor" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy;Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

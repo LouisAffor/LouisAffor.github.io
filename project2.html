@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Louis Affor</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Interactive Python Puzzles</h1>
+						<p></p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<h2><strong>Noughts and Crosses Game</strong></h2>	
+								<p><span class="image right"><img src="images/picNAX.JPG" alt="" /></span>
+								
+									<ul>
+									<p style="margin-bottom:0cm;"></p>
+									Turn based game with graphical user interface.<br /> 
+									<p>view on GitHub: <a href="https://github.com/LouisAffor/Noughts-and-Crosses" target="_blank" rel="noopener noreferrer"><strong>/LouisAffor/Noughts-and-Crosses</strong></a></p>
+									<p style="margin-bottom:1cm;"></p>
+									<u>Key Features:</u><br />
+										<li><strong>Empty cell function:</strong> only allowing inputs into cells that have no previous input.</li>
+										<li><strong>Check win function:</strong> stop the game and draw a line to indicate a player has won with 3 of the same type of object (X or O) in a row.</li>
+										<li><strong>Restart function:</strong> by pressing SPACE on the keyboard the game will reset anew</li>
+									</ul>
+								</p>
+								<p style="margin-bottom:2cm;"></p>
+								<p>Two player turn based game that randomly chooses the starting symbol.
+									programmed procedually, displaying the grid and marks (X & O's) with the use of
+									a matrix for positioning through the numpy module. Each turn the designated cells 
+									are checked to determine 1) if the game is ongoing, 2) if the 
+									cell is empty and 3) if the win condition has been met. 
+									At any point the grid can be reset by pressing the SPACE bar.
+								</p>
+								<p style="margin-bottom:2cm;"></p>
+
+								<h2><strong>Sudoku Puzzle</strong></h2>	
+								<p><span class="image right"><img src="images/picSUD.JPG" alt="" /></span>
+								
+									<ul>
+									<p style="margin-bottom:2cm;"></p>
+									Object oriented Sudoku game with GUI, and multiple boards.<br />
+									<p>view on GitHub: <a href="https://github.com/LouisAffor/Sudoku"target="_blank" rel="noopener noreferrer"><strong>/LouisAffor/Sudoku</strong></a></p>
+									<p style="margin-bottom:1cm;"></p>
+									<u>Key Features:</u><br />
+									
+										<li><strong>Web-scraping</strong> for attainment of random board</li>
+										<li>Three <strong>integrated boards</strong> of differing difficulty (easy, medium, hard) with solutions</li>
+										<li><strong>Board checking function</strong> that highlights incorrect cells</li>
+										<li>seperate Terminal <strong>sudoku solving algorithm</strong></li>
+									</ul>
+								</p>	
+								<p style="margin-bottom:4cm;"></p>
+								<p>Sudoku board that has integrated boards with attached solutions 
+									solved with the use of a backtracking solution algorithm.
+									Cell checking function that ensures that the rules of sudoku 
+									are met (therefore each row, column and 3x3 grid contains 
+									one iteration of the numbers 1-9). Random board is obtained 
+									through getting a board from 
+									<a href="https://nine.websudoku.com/"target="_blank" rel="noopener noreferrer">nine.websudoku.com</a>
+									via web-scraping. Based on tutorial work.</p>
+
+								<ul class="actions">
+									<li><input type="button" value="Back" onclick="history.back()"></li>
+								</ul>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<ul class="icons">
+								<li><a href="https://uk.linkedin.com/in/louis-affor" class="icon brands fa-linkedin alt"><span class="label">Linkedin</span></a></li>
+								<li><a href="https://github.com/LouisAffor" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy;Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
